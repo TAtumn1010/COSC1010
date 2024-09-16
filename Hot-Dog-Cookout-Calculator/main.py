@@ -14,7 +14,7 @@ Buns_pack = 8
 
 
 
-y= int(input('Enter the amount of bun packs:'))
+x= int(input('Enter the amount of bun packs:'))
 y= int(input('Enter the amount of hot dog packs:'))
 #calculate the total hot dogs and buns + leftover buns and hot dogs
  
