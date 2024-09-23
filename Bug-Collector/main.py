@@ -1,11 +1,20 @@
 #
-# Name
-# Date
+# Name Tatumn Chavez
+# Date 9/23/24
 # Bug Collector Programming Project
-# COSC 2409 DNT
-#
-# Initialize variables for bugs and total number of bugs collected.
+# COSC 2409 DN
 
-# Get number of bugs collected each day using a for loop.
+# Initialize the accumulator.
+total_bugs_collected = 0
 
-# Display the total number of bugs collected.
+# get the bugs collected for each day
+
+for day in range(1, 8):
+
+    bugs_collected = int(input('Enter the number of bugs collected on day ' + str(day) + ': '))
+
+# Add bugs to total.
+    total_bugs_collected += bugs_collected
+
+# Display the total bugs.
+print('Total number of bugs collected:', total_bugs_collected)
