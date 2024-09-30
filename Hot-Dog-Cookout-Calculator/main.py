@@ -1,40 +1,72 @@
 #
 # Name Tatumn chavez
-# Date 16/9/24
+# Date 29/9/24
 # Hot Dog Cookout Calculator Programming Project
 # COSC 2409 DNT
 #
 # Use comments liberally throughout the program. 
 
-# varibles
+HOT_DOGS_PER_PACKAGE = 10
+BUNS_PER_PACKAGE = 8
 
-hotdog_pack =10
-Buns_pack = 8
-# ask the number of hot dog packs and bun packs
+# Local Variables
+numAttending = 0  # number of people attending
+numPerPerson = 0  # The number of hot dogs and buns needed per person
+total = 0         # The total number of hot dogs and buns needed
+minDogs = 0       # The minimum number of packages of hot dogs
+minBuns = 0       # The minimum number of packages of hot dog buns
+dogsLeft = 0      # the number of hot dogs left from a pack
+bunsLeft = 0      # The number of hot dog buns left over from a pack
 
+# Get the number of people attending the cookout from the user.
+numAttending = int(input('Enter the number of people attending the cookout: '))
 
+# Get the number of hot dogs per person from the user
+numPerPerson = int(input('Enter the number of hot dogs per person: '))
 
-x= int(input('Enter the amount of bun packs:'))
-y= int(input('Enter the amount of hot dog packs:'))
-#calculate the total hot dogs and buns + leftover buns and hot dogs
- 
-amount1= x * hotdog_pack
-amount2= y * Buns_pack
+# Calculate the total number of hot dogs and buns needed
+total = numAttending * numPerPerson
 
-leftover1= amount1 - amount2
-leftover2= amount2 - amount1
+# Calculate the minimum number of hot dog packs needed
+minDogs = total // HOT_DOGS_PER_PACKAGE
 
-#print total hot dogs and buns
- 
-print(' total hod dogs:',amount1)
-print(' total buns:',amount2)
+# Calculate the number of hot dogs left over from a package if any
+dogsLeft = total % HOT_DOGS_PER_PACKAGE
 
-# print the number of leftover hotdogs or buns
+# If there will be leftover hot dogs, add an additional package of hot dogs
+if dogsLeft != 0:
+    minDogs += 1
 
-if amount1 > amount2: print('Amount of leftover hotdogs:',leftover1)
+# Determine the total number of hot dogs after considering the additional package
+totalDogs = minDogs * HOT_DOGS_PER_PACKAGE
 
-elif amount2 > amount1:print('Amount of leftover buns:',leftover2)
+# Calculate the number of hot dogs left over after considering all packages
+dogsLeft = totalDogs - total
 
-else: print('there are no leftovers:')  
+# Calculate the minimum number of bun packs needed
+minBuns = total // BUNS_PER_PACKAGE 
 
-#
+# Calculate the number of hot dogs left over from a package if any
+bunsLeft = total % BUNS_PER_PACKAGE 
+
+# If there will be leftover hot dogs, add an additional package of hot dogs
+if bunsLeft != 0:
+    minBuns += 1
+
+# Determine the total number of hot dogs after considering the additional package
+totalBuns = minBuns * BUNS_PER_PACKAGE 
+
+# Calculate the number of hot dogs left over after considering all packages
+BunsLeft = totalBuns - total
+
+# Display the minimum packages of hot dogs needed
+print('Minimum packages of hot dogs needed:', minDogs)
+
+# Display the number of hot dogs left over
+print('Hot dogs left over:', dogsLeft)
+
+# Display the minimum packages of buns needed
+print('Minimum packages of Buns needed:', minBuns)
+
+# Display the number of bunsleft over
+print('Hot dogs left over:', BunsLeft)
