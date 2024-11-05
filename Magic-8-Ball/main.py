@@ -1,6 +1,6 @@
 #
-# Name
-# Date
+# Name Tatumn chavez
+# Date November 4 2024
 # Magic 8 Ball Programming Project
 # COSC 2409 DNT
 #
