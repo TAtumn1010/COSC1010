@@ -1,46 +1,31 @@
-
 #
 # Name Tatumn Chavez
-# Date21/11/6
-## Average of Numbers Programming Project
-# COSC 2409 DNT
-#
-
-#
-# Name Tatumn Chavez
-# Date21/10/24
+# Date 11/11/24
 #
 # COSC 2409 DNT
-#
-
-
-# Open the file 
-
-num_file = open('numbers.txt', 'r')
-
-
-# Read  the line from the file
-
-num1 = int(num_file.readline())
-num2 = int(num_file.readline())
-num3 = int(num_file.readline())
-
-#close the file
-
-num_file.close()
-
-
-# Calculate the sum  and avege of the three numbers
-
-sum = num1 + num2 + num3
-average = sum / 3
-
-
-# Print statement
-
-print(num1, num2, num3)
-print(average)
 
 
 
+def Main():
+#initializing variables
+    total = 0.0
+    count = 0
 
+    my_file = open('numbers.txt', 'r')
+
+    # Read the line from the file
+    for line in my_file:
+        amount = float(line)
+        total += amount
+        count += 1
+
+    my_file.close()
+    
+    # Calculate the average:
+    average = total / count
+    
+    print("Total:", total)
+    print("Average:", average)
+
+# Call the Main function
+Main()
